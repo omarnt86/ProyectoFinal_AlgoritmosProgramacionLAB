@@ -32,6 +32,16 @@ Funcion modificarProducto (producto, cantidad, precio, num)
 FinFuncion
 
 
+//Funcion para eliminar producto
+Funcion eliminar (producto, cantidad, precio, num, cantidadProducto)
+	Para i = num Hasta cantidadProducto - 1 Con Paso 1 Hacer
+		producto(i) = producto (i + 1)
+		precio(i) = precio (i + 1)
+		cantidad(i) = cantidad (i + 1)
+	FinPara
+FinFuncion
+
+
 // Menu Principal
 Algoritmo MenuPrincipal
 	
@@ -78,6 +88,17 @@ Algoritmo MenuPrincipal
 				num = num - 1
 				modificarProducto(producto, cantidad, precio, num)
 				Escribir "Registro modificado!"
+				Escribir ""
+				Escribir "Presione cualquier tecla para continuar"
+				Esperar Tecla
+			4:
+				mostrarProducto(producto, cantidad, precio, cantidadProducto)
+				Escribir "Indique el numero del producto que desea eliminar:"
+				Leer num
+				num = num - 1
+				eliminar(producto, cantidad, precio, num, cantidadProducto)
+				cantidadProducto = cantidadProducto - 1
+				Escribir "Registro eliminado!"
 				Escribir ""
 				Escribir "Presione cualquier tecla para continuar"
 				Esperar Tecla
