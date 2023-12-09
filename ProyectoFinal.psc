@@ -1,25 +1,35 @@
 // Funcion para agregar productos
 Funcion crear (producto, cantidad, precio, cantidadProducto)
 	Para i = 0 Hasta cantidadProducto - 1 Con Paso 1 Hacer
-		Escribir "Ingrese el nombre del producto No. ", (i+1), " a agregar"
+		Escribir "Ingrese el nombre del producto No. ", (i+1), " a agregar:"
 		Leer producto(i)
-		Escribir "Indique la cantidad a agregar"
+		Escribir "Indique la cantidad a agregar:"
 		Leer cantidad(i)
-		Escribir "Indique el precio del producto"
+		Escribir "Indique el precio del producto:"
 		Leer precio(i)
 		Escribir ""
 	FinPara
 FinFuncion
 
 //Funcion para mostrar productos
-	Funcion mostrarProducto (producto, cantidad, precio, cantidadProducto)
-		Para i = 0 Hasta cantidadProducto - 1 Con Paso 1 Hacer
-			Escribir "Producto No. ", (i+1), ": ", producto(i)
-			Escribir "Cantidad producto No. ", (i+1), ": ", cantidad(i)
-			Escribir "Precio del producto No. ", (i+1), ": RD$", precio(i)
-			Escribir ""
-		FinPara
-	FinFuncion
+Funcion mostrarProducto (producto, cantidad, precio, cantidadProducto)
+	Para i = 0 Hasta cantidadProducto - 1 Con Paso 1 Hacer
+		Escribir "Producto No. ", (i+1), ": ", producto(i)
+		Escribir "Cantidad producto No. ", (i+1), ": ", cantidad(i)
+		Escribir "Precio del producto No. ", (i+1), ": RD$", precio(i)
+		Escribir ""
+	FinPara
+FinFuncion
+
+//Funcion para modificar producto
+Funcion modificarProducto (producto, cantidad, precio, num)
+	Escribir "Colocar nuevo nombre del producto:"
+	Leer producto(num)
+	Escribir "Colocar nueva cantidad del producto:"
+	Leer cantidad(num)
+	Escribir "Colocar nuevo precio del producto:"
+	Leer precio(num)
+FinFuncion
 
 
 // Menu Principal
@@ -57,6 +67,17 @@ Algoritmo MenuPrincipal
 			2:
 				//Mostrar productos registrados
 				mostrarProducto(producto, cantidad, precio, cantidadProducto)
+				Escribir ""
+				Escribir "Presione cualquier tecla para continuar"
+				Esperar Tecla
+			3:
+				//Modificar producto
+				mostrarProducto(producto, cantidad, precio, cantidadProducto)
+				Escribir "Indique el numero del producto que desea modificar:"
+				Leer num
+				num = num - 1
+				modificarProducto(producto, cantidad, precio, num)
+				Escribir "Registro modificado!"
 				Escribir ""
 				Escribir "Presione cualquier tecla para continuar"
 				Esperar Tecla
