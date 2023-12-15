@@ -1,5 +1,5 @@
 // Funcion para agregar productos
-Funcion crear (producto, cantidad, precio, cantidadProducto)
+Funcion crearProducto (producto, cantidad, precio, cantidadProducto)
 	Para i = 0 Hasta cantidadProducto - 1 Con Paso 1 Hacer
 		Escribir "Ingrese el nombre del producto No. ", (i+1), " a agregar:"
 		Leer producto(i)
@@ -33,7 +33,7 @@ FinFuncion
 
 
 //Funcion para eliminar producto
-Funcion eliminar (producto, cantidad, precio, num, cantidadProducto)
+Funcion eliminarProducto (producto, cantidad, precio, num, cantidadProducto)
 	Para i = num Hasta cantidadProducto - 1 Con Paso 1 Hacer
 		producto(i) = producto (i + 1)
 		precio(i) = precio (i + 1)
@@ -67,9 +67,9 @@ Algoritmo MenuPrincipal
 		Segun op Hacer
 			1:
 				//Creacion de producto
-				Escribir "Indique cuantos productos desea agregar"
+				Escribir "Indique cuantos productos desea agregar:"
 				Leer cantidadProducto
-				crear(producto, cantidad, precio, cantidadProducto)
+				crearProducto(producto, cantidad, precio, cantidadProducto)
 				Escribir "Registro creado!"
 				Escribir ""
 				Escribir "Presione cualquier tecla para continuar"
@@ -92,11 +92,12 @@ Algoritmo MenuPrincipal
 				Escribir "Presione cualquier tecla para continuar"
 				Esperar Tecla
 			4:
+				//Eliminar producto
 				mostrarProducto(producto, cantidad, precio, cantidadProducto)
 				Escribir "Indique el numero del producto que desea eliminar:"
 				Leer num
 				num = num - 1
-				eliminar(producto, cantidad, precio, num, cantidadProducto)
+				eliminarProducto(producto, cantidad, precio, num, cantidadProducto)
 				cantidadProducto = cantidadProducto - 1
 				Escribir "Registro eliminado!"
 				Escribir ""
